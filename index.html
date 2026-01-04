@@ -6,27 +6,20 @@
         <h1>Welcome!</h1>
         <p>This is a budget app. You can add your income and expenses and see your balance.</p>
 
-        <!-- total balance section --> 
+        <!-- total balance section -->
         <h2>Balance</h2>
-        <div class="container">
-            <h3>Select the type of the transaction</h3>
-            <div class="select box">
-                <div class="input container active">
-                    <div
-                        <input
-                            type="text"
-                            class="selected"
-                            placeholder="select!"
-                        />
-                    </div>
-            <ul class="'options dropdownbtn">
-                  <li class="typeof"><i class="income">income</i></li>>
-                <li class="typeof"><i class="expenses">expenses</i></li>>
-            </div>
-        </div>
+        
+        <!-- transaction type -->
+        <h2>Transaction</h2>
+        <select>
+            <option value="income">income</option>
+            <option value="expenses" selected>expenses</option>
+        </select>
+        <input type="number" id="transactionValue" placeholder="Enter the amount of the transaction.">
+        <!-- <button id="transactionBtn" placeholder="submit"> -->
         <!----transaction list section -->     
         <h2>Transaction Name</h2>
-        <input type="text" id="transactionName" placeholder="Enter the name of the transaction">
+        <input type="text" id="transactionName" placeholder="Enter the name of the transaction.">
         
         <!-- date section-->
         <h2>Date</h2>
