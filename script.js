@@ -1,22 +1,4 @@
-//dropdown function 
-function dropdown(){
-  document.getElementById('dropdownbtn').classList.toggle('show'); 
-}
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName('dropdown-content');
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-
 // edw kanw to value na einai arithmos kai oxi apla string
-
 function getNumberFromInput(Id){
   const value = parseFloat(document.getElementById(Id).value);  
   return isNaN(value) ? 0 : value;
@@ -39,7 +21,7 @@ function setBalance(value){
 // to income moy
 
 function addIncome(){
-  const income = getNumberFromInput("income");
+  const income = getNumberFromInput("inco me");
   const balance = getBalance();
   const newBalance = balance + income;
   setBalance(newBalance);
@@ -55,7 +37,35 @@ function addExpense(){
 }
 
 // description toy transaction 
-
+transactionBtn.addEventListener("click", addTransaction);
 function addTransaction(){
+  const transactionType = document.getElementById("transactionType").value;
+  const amount = getNumberFromInput("transactionValue");
+  const balance = getBalance();
+  const income = getNumberFromInput("transactionValue");
+  const expenses = getNumberFromInput("transactionValue");
+  console.log("amount:", amount, typeof amount);
+  console.log("balance:", balance, typeof balance);
 
+  if (transactionType === "income"){
+    const newBalance = balance + income;
+    console.log(newBalance);
+    setBalance(newBalance);
+  }
+  else if (transactionType === "expenses"){
+    const newBalance = balance - expenses;
+    console.log(newBalance);
+    setBalance(newBalance);
+  }
+  else if (transactionType ===""){
+    console.log("wrong!")
+  }
 }
+/* function addTransaction(){
+  document.getElementById("transactionBtn");
+  const income = getNumberFromInput("income");
+  const expenses = getNumberFromInput("expenses");
+  const newBalance = income - expenses; 
+  setBalance(newBalance);
+}
+  */

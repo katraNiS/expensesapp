@@ -8,26 +8,33 @@
 
         <!-- total balance section -->
         <h2>Balance</h2>
-        
-        <!-- transaction type -->
-        <h2>Transaction</h2>
-        <select>
-            <option value="income">income</option>
-            <option value="expenses" selected>expenses</option>
+        <span id="balance">0.00</span>
+        <!-- transaction section -->
+        <h3>Transaction</h3>
+        <label>Select</label>
+        <select name="transaction-type" id="transactionType">
+          <option value="">--Please choose an option--</option>
+          <option value="income">Income</option>
+          <option value="expenses">Expense</option>
         </select>
-        <input type="number" id="transactionValue" placeholder="Enter the amount of the transaction.">
-        <!-- <button id="transactionBtn" placeholder="submit"> -->
-        <!----transaction list section -->     
-        <h2>Transaction Name</h2>
+        <input type="number" id="transactionValue" placeholder="Enter the amount of the transaction.">        
+        <h5>Transaction Name</h5>
         <input type="text" id="transactionName" placeholder="Enter the name of the transaction.">
-        
-        <!-- date section-->
-        <h2>Date</h2>
-        <input type="datetime" id="date">
-        
+        <h5>Date</h5>
+        <input type="datetime-local" id="date">
+        <input type="button" id="transactionBtn" placeholder="submit  ">
+
+        <div>
+            <h5>Total Income</h5>
+            <span id="income">0.00</span>
+        </div>
+        <div>
+            <h5>Total Expenses</h5>
+            <span id="expenses">0.00</span>
+        </div>
     </body>
     <script src="script.js"></script>
 </html>
 
-/* o giannis dokimazei ta branches */
+<!-- o giannis dokimazei ta branches */ -->
 
