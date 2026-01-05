@@ -6,25 +6,35 @@
         <h1>Welcome!</h1>
         <p>This is a budget app. You can add your income and expenses and see your balance.</p>
 
-        <!-- total balance section --> 
+        <!-- total balance section -->
         <h2>Balance</h2>
-        <p id="balance">0</p>
-        <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-        <div id="myDropdown" class="dropdown-content">
-        <a href="#">Income</a>
-        <a href="#">Expenses</a>
+        <span id="balance">0.00</span>
+        <!-- transaction section -->
+        <h3>Transaction</h3>
+        <label>Select</label>
+        <select name="transaction-type" id="transactionType">
+          <option value="">--Please choose an option--</option>
+          <option value="income">Income</option>
+          <option value="expenses">Expense</option>
+        </select>
+        <input type="number" id="transactionValue" placeholder="Enter the amount of the transaction.">        
+        <h5>Transaction Name</h5>
+        <input type="text" id="transactionName" placeholder="Enter the name of the transaction.">
+        <h5>Date</h5>
+        <input type="datetime-local" id="date">
+        <input type="button" id="transactionBtn" placeholder="submit  ">
+
+        <div>
+            <h5>Total Income</h5>
+            <span id="income">0.00</span>
         </div>
+        <div>
+            <h5>Total Expenses</h5>
+            <span id="expenses">0.00</span>
         </div>
-        <!----transaction list section -->     
-        <h2>Transaction Name</h2>
-        <input type="text" id="transactionName" placeholder="Enter the name of the transaction">
-        
-        <!-- date section-->
-        <h2>Date</h2>
-        <input type="datetime" id="date">
-        
     </body>
     <script src="script.js"></script>
 </html>
+
+<!-- o giannis dokimazei ta branches */ -->
 
