@@ -18,10 +18,18 @@ function setBalance(value){
   document.getElementById("balance").textContent = value.toFixed(2);
 }
 
+function setIncome(value){
+  document.getElementById("income").textContent = value.toFixed(2);
+}
+
+function setExpenses(value){
+  document.getElementById("expenses").textContent = value.toFixed(2);
+}
+
 // to income moy
 
 function addIncome(){
-  const income = getNumberFromInput("inco me");
+  const income = getNumberFromInput("income");
   const balance = getBalance();
   const newBalance = balance + income;
   setBalance(newBalance);
@@ -38,6 +46,7 @@ function addExpense(){
 
 // description toy transaction 
 transactionBtn.addEventListener("click", addTransaction);
+
 function addTransaction(){
   const transactionType = document.getElementById("transactionType").value;
   const amount = getNumberFromInput("transactionValue");
@@ -51,15 +60,19 @@ function addTransaction(){
     const newBalance = balance + income;
     console.log(newBalance);
     setBalance(newBalance);
+    
   }
+
   else if (transactionType === "expenses"){
     const newBalance = balance - expenses;
     console.log(newBalance);
     setBalance(newBalance);
   }
+
   else if (transactionType ===""){
     console.log("wrong!")
   }
+
 }
 /* function addTransaction(){
   document.getElementById("transactionBtn");
