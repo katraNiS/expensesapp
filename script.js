@@ -53,6 +53,8 @@ function addTransaction(){
   const balance = getBalance();
   const income = getNumberFromInput("transactionValue");
   const expenses = getNumberFromInput("transactionValue");
+  const totalIncome = getNumberFromInput("income") + amount;
+  const totalExpenses = getNumberFromInput("expenses") + amount;
   console.log("amount:", amount, typeof amount);
   console.log("balance:", balance, typeof balance);
 
@@ -60,13 +62,14 @@ function addTransaction(){
     const newBalance = balance + income;
     console.log(newBalance);
     setBalance(newBalance);
-    
+    setIncome(totalIncome);
   }
 
   else if (transactionType === "expenses"){
     const newBalance = balance - expenses;
     console.log(newBalance);
     setBalance(newBalance);
+    setExpenses(totalExpenses);
   }
 
   else if (transactionType ===""){
