@@ -48,13 +48,19 @@ function addExpense(){
 transactionBtn.addEventListener("click", addTransaction);
 
 function addTransaction(){
+  // pernw ta stoixeia 
   const transactionType = document.getElementById("transactionType").value;
+  const prevIncome = document.getElementById("income");
+  const prevExpenses = document.getElementById("expenses");
+  // ypologizw to neo total income kai total expenses
+  const totalIncome = parseFloat(prevIncome.textContent) + getNumberFromInput("transactionValue");
+  const totalExpenses = parseFloat(prevExpenses.textContent) + getNumberFromInput("transactionValue");
+  // pernw ta ypoloipa kai to poso toy transaction
   const amount = getNumberFromInput("transactionValue");
   const balance = getBalance();
   const income = getNumberFromInput("transactionValue");
   const expenses = getNumberFromInput("transactionValue");
-  const totalIncome = getNumberFromInput("income") + amount;
-  const totalExpenses = getNumberFromInput("expenses") + amount;
+  
   console.log("amount:", amount, typeof amount);
   console.log("balance:", balance, typeof balance);
 
@@ -77,11 +83,3 @@ function addTransaction(){
   }
 
 }
-/* function addTransaction(){
-  document.getElementById("transactionBtn");
-  const income = getNumberFromInput("income");
-  const expenses = getNumberFromInput("expenses");
-  const newBalance = income - expenses; 
-  setBalance(newBalance);
-}
-  */
