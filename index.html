@@ -5,10 +5,6 @@
     <body>
         <h1>Welcome!</h1>
         <p>This is a budget app. You can add your income and expenses and see your balance.</p>
-
-        <!-- total balance section -->
-        <h2>Balance</h2>
-        <span id="balance">0.00</span>
         <!-- transaction section -->
         <h3>Transaction</h3>
         <label>Select</label>
@@ -24,6 +20,16 @@
         <input type="datetime-local" id="date">
         <input type="button" id="transactionBtn" placeholder="submit  ">
 
+        <table style="width:100%">
+            TRANSACTIONS
+            <tr>
+                <th>Type</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Date</th>            
+            </tr>
+            <tbody id="transactionTableBody"></tbody>
+        </table>
         <div>
             <h5>Total Income</h5>
             <span id="income">0.00</span>
@@ -32,6 +38,10 @@
             <h5>Total Expenses</h5>
             <span id="expenses">0.00</span>
         </div>
+
+        <!-- total balance section -->
+        <h2>BALANCE</h2>
+        <span id="balance">0.00</span>
     </body>
     <script src="script.js"></script>
 </html>
