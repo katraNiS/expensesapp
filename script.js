@@ -86,6 +86,11 @@ function addTransaction(){
   const tr = document.createElement("tr");
   const td1 = document.createElement("td");
   td1.textContent = transactionType;
+  if (transactionType === "income"){
+    td1.style.color = "green";
+  } else if (transactionType === "expenses"){
+    td1.style.color = "red";
+  }
   tr.appendChild(td1);
   const td2 = document.createElement("td");
   td2.textContent = name;
@@ -96,12 +101,19 @@ function addTransaction(){
   const td4 = document.createElement("td");
   td4.textContent = date;
   tr.appendChild(td4);
+  const td5 = document.createElement("td");
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "Delete";
+  deleteBtn.addEventListener("click", () => {
+    tbodyid.removeChild(tr);
+  });
+  td5.appendChild(deleteBtn);
+  tr.appendChild(td5);
   tbodyid.appendChild(tr);
 
   if (transactionType === "income"){
     const newBalance = balance + income;
     const totalIncome = parseFloat(prevIncome.textContent) + getNumberFromInput("transactionValue");
-    console.log(newBalance);
     setBalance(newBalance);
     setIncome(totalIncome);
   }
@@ -109,7 +121,6 @@ function addTransaction(){
   else if (transactionType === "expenses"){
     const newBalance = balance - expenses;
     const totalExpenses = parseFloat(prevExpenses.textContent) + getNumberFromInput("transactionValue");
-    console.log(newBalance);
     setBalance(newBalance);
     setExpenses(totalExpenses);
   }
