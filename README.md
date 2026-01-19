@@ -1,3 +1,3 @@
 # expensesapp
- vibe coding expenses app for personal use 
- auto to project to kanw gia na katalavw kalutera thn javascript.
+ learning the basics of javascript
+ expenses app for personal use 
